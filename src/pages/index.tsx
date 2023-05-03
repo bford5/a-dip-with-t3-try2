@@ -4,10 +4,10 @@ import Link from "next/link";
 
 // import { SignInButton } from "@clerk/nextjs";
 
-// import { api } from "~/utils/api";
+import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
-  // const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const { data } = api.posts.getAll.useQuery();
 
   return (
     <>
@@ -36,6 +36,19 @@ const Home: NextPage = () => {
           {/* <div className=" clerkBtns mx-auto grid w-1/2 grid-cols-2 gap-4">
             <SignInButton />
           </div> */}
+          <div className="postsRow my-4 rounded-md bg-zinc-600 px-4 py-3 text-yellow-600">
+            {data?.map((post) => {
+              return (
+                <div
+                  key={post.id}
+                  className=" mx-auto my-2 w-4/5 rounded-md border-2 border-black text-center"
+                >
+                  <h2>{post.userAuthorId}</h2>
+                  <p>{post.content}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </main>
     </>
