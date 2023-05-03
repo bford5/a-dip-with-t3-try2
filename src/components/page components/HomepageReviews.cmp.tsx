@@ -1,4 +1,13 @@
-export default function HomepageReviews({ data }) {
+type PostType = {
+  post: {
+    id: string;
+    userAuthorName: string;
+    content: string;
+  };
+  author: any;
+};
+
+export default function HomepageReviews({ data }: { data: PostType[] }) {
   return (
     <>
       {[...data]?.map(({ post, author }) => {
