@@ -1,8 +1,11 @@
 import { withClerkMiddleware } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+// import type { NextRequest } from "next/server";
 
-export default withClerkMiddleware((req: NextRequest) => {
+// add req: NextRequest to like withClerkMiddleware(req: NextRequest) if above import is uncommented
+export default withClerkMiddleware(() => {
+  // console.log("middleware running");
+
   return NextResponse.next();
 });
 
