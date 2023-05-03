@@ -24,6 +24,7 @@ model Post {
 
     content String @db.VarChar(255)
     userAuthorId String
+    userAuthorName String
 
     @@index([userAuthorId])
     // the ^^ allows all posts to be looked by by userAuthorId ("a given author") ;; essentially indexes all posts under the assigned
