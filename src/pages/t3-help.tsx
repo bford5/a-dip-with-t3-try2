@@ -2,10 +2,10 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 
-import { api } from "~/utils/api";
+// import { api } from "~/utils/api";
 
 const T3Help: NextPage = () => {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  // const hello = api.example.hello.useQuery({ text: "from tRPC" });
 
   return (
     <>
@@ -43,9 +43,9 @@ const T3Help: NextPage = () => {
               </div>
             </Link>
           </div>
-          <p className="text-2xl text-white">
+          {/* <p className="text-2xl text-white">
             {hello.data ? hello.data.greeting : "Loading tRPC query..."}
-          </p>
+          </p> */}
         </div>
       </main>
     </>
