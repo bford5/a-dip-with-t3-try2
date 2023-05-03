@@ -1,16 +1,16 @@
-type PostType = {
-  post: {
-    id: string;
-    userAuthorName: string;
-    content: string;
-  };
-  author: any;
-};
+// type PostType = {
+//   post: {
+//     id: string;
+//     userAuthorName: string;
+//     content: string;
+//   };
+//   author: any;
+// };
 
-export default function HomepageReviews({ data }: { data: PostType[] }) {
+export default function HomepageReviews({ data }) {
   return (
     <>
-      {[...data]?.map(({ post, author }) => {
+      {data?.map(({ post, author }) => {
         return (
           <div
             key={post.id}
